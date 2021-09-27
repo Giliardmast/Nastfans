@@ -4,7 +4,7 @@ import * as S from './styles'
 const PromotionalCard = () => (
   <S.ContentPromotion>
     <div>
-      <h2>ACESSO AO COMTEUDO VIP</h2>
+      <h2>ACESSO AO CONTEÚDO VIP</h2>
       <p>Veja todo conteudo de Nicole maya</p>
     </div>
     <S.ContentPreco>
@@ -15,7 +15,7 @@ const PromotionalCard = () => (
         </S.Preco>
       </S.box>
       <S.box>
-        <Button>Assinar </Button>
+        <Button fullWidth>Assinar </Button>
       </S.box>
     </S.ContentPreco>
     <S.ContentInfo>

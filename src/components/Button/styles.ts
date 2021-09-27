@@ -45,6 +45,12 @@ const wrapperModifiers = {
 
 export const Wrapper = styled.button<WrapperProps>`
   ${({ theme, size, fullWidth, hasIcon, minimal }) => css`
+    &.bt_like {
+      border-radius: 3rem;
+      padding: 0.8rem 2.2rem;
+      background-color: ${theme.colors.secondary};
+      color: ${theme.colors.white};
+    }
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -61,6 +67,7 @@ export const Wrapper = styled.button<WrapperProps>`
       background: ${minimal ? ' none' : '#8888fff0'};
       color: ${theme.colors.white};
     }
+
     //se o size estive sendo passado agenta vai chamar o wrapperModifiers chamado o size que foi passado
     ${!!minimal && wrapperModifiers.minimal(theme)}
     ${!!size && wrapperModifiers[size](theme)}

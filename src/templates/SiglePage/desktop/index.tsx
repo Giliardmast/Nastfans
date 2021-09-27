@@ -1,20 +1,23 @@
-import Button from 'components/Button'
 import { Container } from 'components/Container'
 import PromotionalCard from 'components/PromotionalCard'
+import Radio from 'components/Radio'
 import SigleSidebar from 'components/SigleSidebar'
-import UseCard, { useCardProps } from 'components/UseCard'
+import { ItemVideoFeedProps } from 'components/VideoFeed'
 import UserInfo, { userInfoProps } from 'components/UserInfo'
-import Base from 'templates/Base'
+import Base from 'templates/Base/desktop'
+import Image from 'next/image'
 
 import * as S from './styles'
+import VideoFeed from 'components/VideoFeed'
+import { Key } from 'react'
 
 export type SigleTemplateProps = {
   cover: string
   userInfo: userInfoProps
-  itemsCard: useCardProps
+  feedItems: ItemVideoFeedProps[]
 }
 
-const SiglePage = ({ cover, userInfo, itemsCard }: SigleTemplateProps) => {
+const SiglePage = ({ cover, userInfo, feedItems }: SigleTemplateProps) => {
   return (
     <Base>
       <S.Cover src={cover} role="image" aria-label="Cover" />
@@ -27,17 +30,38 @@ const SiglePage = ({ cover, userInfo, itemsCard }: SigleTemplateProps) => {
             <S.MuiTabsbox>
               <S.SigleTitle>Desktop</S.SigleTitle>
               <S.MuiTabs>
-                <Button>Fotos</Button>
-                <Button>Videos</Button>
-                <Button>Packs</Button>
+                <Radio
+                  id="feed"
+                  value="feed"
+                  label="Feed"
+                  labelFor="feed"
+                  name="multitabs"
+                  button
+                />
+                <Radio
+                  id="videos"
+                  value="videos"
+                  label="Premium Videos"
+                  labelFor="videos"
+                  name="multitabs"
+                  button
+                />
+                <Radio
+                  id="packs"
+                  value="packs"
+                  label="Packs"
+                  labelFor="packs"
+                  name="multitabs"
+                  button
+                />
               </S.MuiTabs>
             </S.MuiTabsbox>
 
-            <S.ContentCard>
-              <UseCard {...itemsCard} />
-              <UseCard {...itemsCard} />
-              <UseCard {...itemsCard} />
-            </S.ContentCard>
+            <S.VideoFeed>
+              {feedItems.map((feedItem, index) => (
+                <VideoFeed key={index} {...feedItem} />
+              ))}
+            </S.VideoFeed>
           </S.Content>
           <S.SidbarConteiner>
             <PromotionalCard />

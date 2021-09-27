@@ -2,7 +2,7 @@ import { Container } from 'components/Container'
 import Heading from 'components/Heading'
 import SliderStories from 'components/SliderStories'
 import { UserStoriesProps } from 'components/UserStories'
-import Base from 'templates/Base'
+import Base from 'templates/Base/desktop'
 import * as S from './styles'
 export type HomeTemplateProps = {
   UserStories: UserStoriesProps[]

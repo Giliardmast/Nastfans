@@ -1,47 +1,31 @@
-import styled, { css } from 'styled-components'
+import styled, { css, DefaultTheme } from 'styled-components'
 import { RadioProps } from '.'
-
-export const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-`
-
-export const Input = styled.input`
-  ${({ theme }) => css`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    appearance: none;
-    width: 1.8rem;
-    height: 1.8rem;
-    border: 0.2rem solid ${theme.colors.primary};
-    border-radius: 50%;
-    background: transparent;
-    transition: background ${theme.transition.fast};
-    outline: none;
-    cursor: pointer;
-
-    &:focus {
-      box-shadow: 0 0 0.5rem ${theme.colors.primary};
-    }
-
-    &:before {
-      content: '';
-      width: 0.8rem;
-      height: 0.8rem;
-      border-radius: 50%;
-      background: ${theme.colors.primary};
-      transition: opacity ${theme.transition.fast};
-      opacity: 0;
-      position: absolute;
-    }
-
-    &:checked {
-      &:before {
-        opacity: 1;
-      }
-    }
+type RadioButton = { button?: boolean }
+export const Wrapper = styled.div<RadioButton>`
+  ${({ theme, button }) => css`
+    ${button && wrapperModifiers.button(theme)}
   `}
+`
+const wrapperModifiers = {
+  button: (theme: DefaultTheme) => css`
+    input[type='radio'] {
+      display: none;
+    }
+    input[type='radio'] + label {
+      border-radius: 3rem;
+      background: #f1f0f2;
+      color: ${theme.colors.primary};
+      padding: 5px 15px;
+      font-size: 14px;
+    }
+    input[type='radio']:checked + label {
+      background: ${theme.colors.primary};
+      color: #fff;
+    }
+  `
+}
+export const Input = styled.input`
+  ${({ theme }) => css``}
 `
 
 export const Label = styled.label<Pick<RadioProps, 'labelColor'>>`

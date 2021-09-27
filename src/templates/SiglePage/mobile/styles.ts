@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
+import * as AvatarStyle from 'components/UserAvatar/styles'
 
 type CoverProps = {
   src: string
@@ -11,15 +12,12 @@ export const Cover = styled.div<CoverProps>`
     top: 0;
     right: 0;
     left: 0;
-    height: 39.5rem;
+    height: 21.5rem;
     background-image: url(${src});
     background-size: cover;
     background-position: top center;
     opacity: 0.8;
 
-    ${media.greaterThan('medium')`
-    height:40rem;
-    `}
     :before {
       top: 0;
       left: 0;
@@ -33,7 +31,10 @@ export const Cover = styled.div<CoverProps>`
   `}
 `
 export const UserContent = styled.div`
-  margin-top: 26.5rem;
+  ${AvatarStyle.Avatar} {
+    width: 9.6rem;
+    height: 9.6rem;
+  }
 `
 export const SingleContent = styled.section`
   display: grid;
@@ -43,36 +44,48 @@ export const SingleContent = styled.section`
   grid-template-columns: 1fr;
   `}
 `
-export const Content = styled.div``
+export const Content = styled.div`
+  position: relative;
+`
 export const SigleTitle = styled.h1`
   padding: 2rem 0rem;
 `
+export const Menu = styled.div`
+  svg {
+    width: 2rem;
+    height: 4rem;
+    color: black;
+  }
+`
+
 export const MuiTabsbox = styled.div`
-  margin: 0 2.5rem;
+  position: relative;
   display: flex;
-  justify-content: space-between;
-  height: 7rem;
-  box-shadow: 0 1px 4px rgb(50 50 50 / 7%);
+  margin: 1.5rem 1rem 1rem;
 `
 export const MuiTabs = styled.div`
-  display: flex;
-  justify-content: end;
-  gap: 1.5rem;
-  padding: 2rem 0rem;
-  flex-wrap: wrap;
+  ${({ theme }) => css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    gap: 1.2rem;
+
+    span {
+      font-size: ${theme.font.sizes.large};
+      color: ${theme.colors.black};
+      font-weight: 500;
+    }
+  `}
 `
 
-export const ContentCard = styled.div`
-  margin: 3rem 2.5rem;
+export const VideoFeed = styled.div`
   display: grid;
-  grid-template-columns: 2fr 2fr 2fr;
+  grid-template-columns: 1fr 1fr;
   position: relative;
-  gap: 1.2rem;
-
-  ${media.lessThan('medium')`
-  grid-template-columns: 1fr;
-  margin: 3rem 0rem;
-  `}
+  gap: 0.9rem;
+  margin: 1.8rem 1rem;
 `
 export const SidbarConteiner = styled.div`
   margin-left: 2rem;
@@ -82,3 +95,5 @@ export const Sidbar = styled.div`
     background-color: ${theme.colors.lightGray};
   `}
 `
+
+export const Video = styled.div``

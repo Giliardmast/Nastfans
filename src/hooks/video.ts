@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 export function usePlayerState(videoRef: React.RefObject<HTMLVideoElement>) {
   const [playerState, setPlayerState] = useState({
-    playing: false,
+    playing: true,
     percentage: 0,
     volume: 70,
     sound: true,

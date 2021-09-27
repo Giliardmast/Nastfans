@@ -42,4 +42,7 @@ export const ActionContent = styled.div`
 export const Action = styled.div`
   height: 4rem;
   display: flex;
+  font-size: 1.6rem;
+  color: #6e6e6e;
+  white-space: nowrap;
 `

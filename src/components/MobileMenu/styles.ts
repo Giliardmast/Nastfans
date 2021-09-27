@@ -3,45 +3,37 @@ import media from 'styled-media-query'
 
 export const Wrapper = styled.menu`
   ${({ theme }) => css`
-    display: flex;
     align-items: center;
     padding: 1rem 2rem;
     position: relative;
-    justify-content: space-between;
-    z-index: ${theme.layers.menu};
 
-    ${media.lessThan('medium')`
-    padding: 0.5rem 0rem;
-    `}
+    z-index: ${theme.layers.menu};
+    padding: 0.8rem 0 0.5rem 0;
   `}
 `
 
 export const IconWrapper = styled.div`
   ${({ theme }) => css`
-    color: ${theme.colors.white};
-    width: 3.2rem;
-    height: 3.2rem;
+    color: #dbdbdb;
+    align-items: center;
+    display: flex;
     cursor: pointer;
-    margin-right: 0.4rem;
+    width: 4rem;
+    height: 4rem;
+    flex-direction: column;
+    gap: 5px;
   `}
 `
 export const MenuGroup = styled.div`
   ${({ theme }) => css`
-    display: flex;
-    flex-grow: 1;
-    justify-content: flex-end;
-    aling-items: center;
-    > div {
-      margin-left: ${theme.spacings.xsmall};
-    }
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
   `}
 `
 export const MenuNav = styled.div`
-  ${({ theme }) => css`
-    ${media.greaterThan('medium')`
-    margin-left: ${theme.spacings.small}
- `}
-  `}
+  ${({ theme }) => css``}
 `
 
 export const MenuLink = styled.span`
@@ -106,6 +98,7 @@ export const MenuFull = styled.nav<MenuFullProps>`
       position: absolute;
       top: 0;
       right: 0;
+
       margin: ${theme.spacings.xsmall};
       cursor: pointer;
       width: 2.5rem;
@@ -148,4 +141,9 @@ export const CreateAccount = styled.a`
     color: ${theme.colors.primary};
     border-bottom: 0.2rem solid ${theme.colors.primary};
   `}
+`
+export const Texbox = styled.div`
+  font-size: 8px;
+  text-align: center;
+  white-space: nowrap;
 `

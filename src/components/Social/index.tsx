@@ -31,7 +31,7 @@ const Social = ({
           <Link href={`https://twitter.com/${twitter}`}>
             <a>
               <span className="twitter">
-                <Twitter title="Twitter" size={32} />
+                <Twitter title="Twitter" size={26} />
               </span>
             </a>
           </Link>
@@ -40,7 +40,7 @@ const Social = ({
           <Link href={`https://www.youtube.com/${youtube}`}>
             <a>
               <span className="youtube">
-                <Youtube title="Youtube" size={32} />
+                <Youtube title="Youtube" size={26} />
               </span>
             </a>
           </Link>
@@ -49,7 +49,7 @@ const Social = ({
           <Link href={`https://www.instagram.com/${instagram}`}>
             <a>
               <span className="instagram">
-                <Instagram title="Instagram" size={32} />
+                <Instagram title="Instagram" size={26} />
               </span>
             </a>
           </Link>
@@ -58,7 +58,7 @@ const Social = ({
           <Link href={`${telegram}`}>
             <a>
               <span className="telegram">
-                <Telegram title="telegram" size={32} />
+                <Telegram title="telegram" size={26} />
               </span>
             </a>
           </Link>
@@ -67,7 +67,7 @@ const Social = ({
           <Link href={`https://www.tiktok.com/@${tiktok}`}>
             <a>
               <span className="tiktok">
-                <Tiktok title="tiktok" size={32} />
+                <Tiktok title="tiktok" size={26} />
               </span>
             </a>
           </Link>
@@ -76,7 +76,7 @@ const Social = ({
           <Link href={`${linkAtenativo}`}>
             <a>
               <span className="linkAtenativo">
-                <LinkIcon title="linkAtenativo" size={32} />
+                <LinkIcon title="linkAtenativo" size={26} />
               </span>
             </a>
           </Link>

@@ -10,6 +10,7 @@ export type RadioProps = {
   labelColor?: 'white' | 'black'
   labelFor?: string
   value?: RadioValue
+  button?: boolean
 } & InputHTMLAttributes<HTMLInputElement>
 
 const Radio = ({
@@ -17,6 +18,7 @@ const Radio = ({
   onCheck,
   labelColor = 'white',
   labelFor = '',
+  button = false,
   value,
   ...props
 }: RadioProps) => {
@@ -25,7 +27,7 @@ const Radio = ({
   }
 
   return (
-    <S.Wrapper>
+    <S.Wrapper button={button}>
       <S.Input
         id={labelFor}
         type="radio"

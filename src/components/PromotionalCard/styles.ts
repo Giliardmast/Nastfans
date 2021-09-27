@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 import * as ButaaomStyle from 'components/Button/styles'
 import { darken } from 'polished'
+import media from 'styled-media-query'
 
 export const ContentPromotion = styled.div`
   ${({ theme }) => css`
@@ -32,17 +33,25 @@ export const ContentPromotion = styled.div`
         background-color: ${darken(0.1, '#ff8845')};
       }
     }
+    ${media.greaterThan('small')`
+    margin-top: 0rem;
+  `}
   `}
 `
 export const ContentPreco = styled.div`
   display: flex;
   justify-content: space-between;
+  gap: 1.5rem;
+  flex-direction: column;
   align-items: center;
 `
-export const box = styled.div``
+export const box = styled.div`
+  width: 100%;
+  text-align: center;
+`
 export const Preco = styled.div`
   ${({ theme }) => css`
-    font-size: 2.4rem;
+    font-size: 3.6rem;
     color: ${theme.colors.primary};
     font-weight: ${theme.font.bold};
 
@@ -67,7 +76,8 @@ export const ContentInfo = styled.div`
     li {
       list-style-type: none;
       margin-top: 0.5em;
-      font-size: ${theme.font.sizes.xsmall};
+      font-size: 1.3rem;
+      color: ${theme.colors.black}
     }
   `}
 `

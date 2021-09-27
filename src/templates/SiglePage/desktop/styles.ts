@@ -40,7 +40,7 @@ export const SingleContent = styled.section`
   grid-template-columns: 5fr 1.5fr;
 
   ${media.lessThan('medium')`
-  grid-template-columns: 1fr;
+  grid-template-columns: 3fr 1fr;
   `}
 `
 export const Content = styled.div``
@@ -62,17 +62,24 @@ export const MuiTabs = styled.div`
   flex-wrap: wrap;
 `
 
-export const ContentCard = styled.div`
+export const VideoFeed = styled.div`
   margin: 3rem 2.5rem;
   display: grid;
-  grid-template-columns: 2fr 2fr 2fr;
+  grid-template-columns: 2fr 2fr 2fr 2fr;
   position: relative;
   gap: 1.2rem;
 
   ${media.lessThan('medium')`
-  grid-template-columns: 1fr;
-  margin: 3rem 0rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
   `}
+
+  img {
+    &.img__avatar {
+      background-size: cover;
+      cursor: pointer;
+    }
+  }
 `
 export const SidbarConteiner = styled.div`
   margin-left: 2rem;

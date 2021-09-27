@@ -37,7 +37,7 @@ yarn-error.log*
 
 # sw stuff
 public/sw.js
-public/vids
+public/users
 public/pics
 public/workbox-*.js
 

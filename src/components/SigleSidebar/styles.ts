@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import media from 'styled-media-query'
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
@@ -19,6 +20,10 @@ export const SidebarContent = styled.main`
       font-size: 1.3rem;
       line-height: 2.4rem;
       margin-top: ${theme.spacings.xsmall};
+      ${media.greaterThan('small')`
+      line-height: 2.1rem;
+      font-size: 1rem;
+  `}
     }
     h3 {
       font-size: 1.77rem;
@@ -38,6 +43,9 @@ export const SidebarContent = styled.main`
       list-style-type: none;
       margin-top: 0.5em;
       font-size: ${theme.font.sizes.small};
+      ${media.greaterThan('small')`
+      font-size: ${theme.font.sizes.xsmall};
+  `}
     }
   `}
 `

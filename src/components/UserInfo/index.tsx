@@ -3,6 +3,7 @@ import Social, { RedesSociaisProps } from 'components/Social'
 import UserAvatar, { UserAvatarProps } from 'components/UserAvatar'
 import { Like } from '@styled-icons/evil/Like'
 import * as S from './styles'
+import MediaMatch from 'components/MediaMatch'
 
 export type userInfoProps = {
   useAvatar: UserAvatarProps
@@ -16,23 +17,22 @@ const UserInfo = ({ useAvatar, linkSocias }: userInfoProps) => (
       <S.ActionContainer>
         <S.ActionContent>
           <S.Action>
-            <Button icon={<Like />} size="medium">
+            <Button icon={<Like />} size="medium" className="bt_like">
               Seguir
             </Button>
           </S.Action>
-          <S.Action>
-            <Button minimal>Envia Messagem</Button>
-          </S.Action>
         </S.ActionContent>
         <S.ActionContent className="metrics">
-          <S.Action>68 videos</S.Action>
-          <S.Action>127 fotos</S.Action>
           <S.Action>1.5k seguidores</S.Action>
+          <S.Action>68 videos</S.Action>
+          <S.Action>127 Packs</S.Action>
         </S.ActionContent>
       </S.ActionContainer>
     </S.UserInfo>
     <S.UserSocial>
-      <Social {...linkSocias} />
+      <MediaMatch greaterThan="medium">
+        <Social {...linkSocias} />
+      </MediaMatch>
     </S.UserSocial>
   </S.Content>
 )

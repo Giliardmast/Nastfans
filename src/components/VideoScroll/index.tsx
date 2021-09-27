@@ -33,7 +33,7 @@ const VideoScroll = ({ url }: VideoProps) => {
     } else {
       videoRef.current!.pause()
     }
-  }, [isVisible, playerState])
+  }, [isVisible])
   // console.log(videoRef)
   return (
     <VisibilitySensor onChange={(isVisible) => setIsVisible(isVisible)}>

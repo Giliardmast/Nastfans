@@ -2,6 +2,8 @@ import dynamic from 'next/dynamic'
 import isMobile from 'hooks/responsive/isMobile'
 import isBot from 'hooks/responsive/isBot'
 
+import FeedMock from 'components/VideoFeed/mock'
+
 import { SigleTemplateProps } from 'templates/SiglePage/desktop'
 const Mobile = dynamic(() => import('templates/SiglePage/mobile'))
 const Desktop = dynamic(() => import('templates/SiglePage/desktop'))
@@ -52,17 +54,7 @@ export async function getStaticProps() {
           link: 'giliard558'
         }
       },
-      itemsCard: {
-        itemCard: {
-          url: 'vids/tiktok1.mp4',
-          soundBar: false
-        },
-        socialDados: {
-          likes: 325,
-          coments: 125,
-          shares: 1650
-        }
-      }
+      feedItems: FeedMock
     }
   }
 }
