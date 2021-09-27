@@ -1,8 +1,10 @@
 import * as S from './styles'
 import Video, { VideoProps } from 'components/Video'
+import { SocialProps } from 'components/SidebarCard'
 
 export type useCardProps = {
   itemCard: VideoProps
+  socialDados: SocialProps
 }
 
 const UseCard = ({ itemCard }: useCardProps) => {

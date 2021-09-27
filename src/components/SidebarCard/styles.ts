@@ -1,6 +1,10 @@
 import styled, { css } from 'styled-components'
 
-export const Sidebar = styled.div``
+export const Sidebar = styled.div`
+  position: absolute;
+  bottom: 4rem;
+  right: 0.7rem;
+`
 export const Item_sidebar_icons = styled.div`
   ${({ theme }) => css`
     position: relative;

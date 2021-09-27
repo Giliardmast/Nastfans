@@ -15,15 +15,14 @@ export const ContentPromotion = styled.div`
     margin-bottom: ${theme.spacings.xsmall};
 
     h2 {
-      font-size: 1.87rem;
+      font-size: 1.65rem;
       font-weight: ${theme.font.bold};
-      text-align: center;
     }
 
     p {
       padding-top: ${theme.spacings.xxsmall};
       font-weight: ${theme.font.light};
-      font-size: ${theme.font.sizes.small};
+      font-size: ${theme.font.sizes.xsmall};
     }
 
     ${ButaaomStyle.Wrapper} {

@@ -1,4 +1,5 @@
 import { Story, Meta } from '@storybook/react'
+import { VideoProps } from '.'
 import Videos from '.'
 
 export default {
@@ -10,7 +11,7 @@ export default {
   }
 } as Meta
 
-export const Default: Story = (args) => (
+export const Default: Story<VideoProps> = (args) => (
   <div style={{ width: '30rem', position: 'relative' }}>
     <Videos {...args} />
   </div>

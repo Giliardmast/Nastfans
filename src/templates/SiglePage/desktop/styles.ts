@@ -38,6 +38,10 @@ export const UserContent = styled.div`
 export const SingleContent = styled.section`
   display: grid;
   grid-template-columns: 5fr 1.5fr;
+
+  ${media.lessThan('medium')`
+  grid-template-columns: 1fr;
+  `}
 `
 export const Content = styled.div``
 export const SigleTitle = styled.h1`
@@ -64,6 +68,11 @@ export const ContentCard = styled.div`
   grid-template-columns: 2fr 2fr 2fr;
   position: relative;
   gap: 1.2rem;
+
+  ${media.lessThan('medium')`
+  grid-template-columns: 1fr;
+  margin: 3rem 0rem;
+  `}
 `
 export const SidbarConteiner = styled.div`
   margin-left: 2rem;

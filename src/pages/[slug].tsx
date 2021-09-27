@@ -1,6 +1,24 @@
-import SiglePage, { SigleTemplateProps } from 'templates/SiglePage'
+import dynamic from 'next/dynamic'
+import isMobile from 'hooks/responsive/isMobile'
+import isBot from 'hooks/responsive/isBot'
+
+import { SigleTemplateProps } from 'templates/SiglePage/desktop'
+const Mobile = dynamic(() => import('templates/SiglePage/mobile'))
+const Desktop = dynamic(() => import('templates/SiglePage/desktop'))
 export default function Index(props: SigleTemplateProps) {
-  return <SiglePage {...props} />
+  const isMobileDevice = isMobile()
+  const isBotDevice = isBot()
+  return (
+    <>
+      {!isBotDevice ? (
+        isMobileDevice ? (
+          <Mobile {...props} />
+        ) : (
+          <Desktop {...props} />
+        )
+      ) : null}
+    </>
+  )
 }
 // gera as paginas durante o Build
 export async function getStaticPaths() {
@@ -38,6 +56,11 @@ export async function getStaticProps() {
         itemCard: {
           url: 'vids/tiktok1.mp4',
           soundBar: false
+        },
+        socialDados: {
+          likes: 325,
+          coments: 125,
+          shares: 1650
         }
       }
     }

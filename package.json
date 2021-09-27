@@ -35,7 +35,8 @@
     "react-visibility-sensor": "^5.1.1",
     "styled-components": "^5.3.1",
     "styled-icons": "^10.42.0",
-    "styled-media-query": "^2.1.2"
+    "styled-media-query": "^2.1.2",
+    "ua-parser-js": "^0.7.28"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",

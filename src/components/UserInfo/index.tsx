@@ -12,7 +12,7 @@ export type userInfoProps = {
 const UserInfo = ({ useAvatar, linkSocias }: userInfoProps) => (
   <S.Content>
     <S.UserInfo>
-      <UserAvatar {...useAvatar} size="large" color="black" />
+      <UserAvatar {...useAvatar} size="large" />
       <S.ActionContainer>
         <S.ActionContent>
           <S.Action>

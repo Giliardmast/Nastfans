@@ -2,7 +2,8 @@ import Button from 'components/Button'
 import { Container } from 'components/Container'
 import PromotionalCard from 'components/PromotionalCard'
 import SigleSidebar from 'components/SigleSidebar'
-import UseCard, { useCardProps } from 'components/UseCard'
+import { useCardProps } from 'components/UseCard'
+import UseCardMobile from 'components/UseCardMobile'
 import UserInfo, { userInfoProps } from 'components/UserInfo'
 import Base from 'templates/Base'
 
@@ -25,7 +26,7 @@ const SiglePage = ({ cover, userInfo, itemsCard }: SigleTemplateProps) => {
         <S.SingleContent>
           <S.Content>
             <S.MuiTabsbox>
-              <S.SigleTitle>Pagina</S.SigleTitle>
+              <S.SigleTitle>Mobile</S.SigleTitle>
               <S.MuiTabs>
                 <Button>Fotos</Button>
                 <Button>Videos</Button>
@@ -34,9 +35,9 @@ const SiglePage = ({ cover, userInfo, itemsCard }: SigleTemplateProps) => {
             </S.MuiTabsbox>
 
             <S.ContentCard>
-              <UseCard {...itemsCard} />
-              <UseCard {...itemsCard} />
-              <UseCard {...itemsCard} />
+              <UseCardMobile {...itemsCard} />
+              <UseCardMobile {...itemsCard} />
+              <UseCardMobile {...itemsCard} />
             </S.ContentCard>
           </S.Content>
           <S.SidbarConteiner>

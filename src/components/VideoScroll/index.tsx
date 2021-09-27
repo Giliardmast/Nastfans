@@ -16,13 +16,6 @@ const VideoScroll = ({ url }: VideoProps) => {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [isVisible, setIsVisible] = useState(false)
 
-  useEffect(() => {
-    if (isVisible) {
-      videoRef.current!.play()
-    } else {
-      videoRef.current!.pause()
-    }
-  }, [isVisible])
   const {
     playerState,
     toggleVideoPlay,
@@ -33,6 +26,14 @@ const VideoScroll = ({ url }: VideoProps) => {
     handlerSoundBar
   } = usePlayerState(videoRef)
 
+  useEffect(() => {
+    if (isVisible) {
+      videoRef.current!.play()
+      playerState.playing = true
+    } else {
+      videoRef.current!.pause()
+    }
+  }, [isVisible, playerState])
   // console.log(videoRef)
   return (
     <VisibilitySensor onChange={(isVisible) => setIsVisible(isVisible)}>
